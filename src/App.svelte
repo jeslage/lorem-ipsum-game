@@ -25,10 +25,39 @@
   }
 </script>
 
+<style>
+  .lorem__original {
+    position: relative;
+    margin: 0;
+  }
+
+  .lorem__try {
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: red;
+  }
+
+  textarea {
+    font-size: 60px;
+    width: 100%;
+    resize: none;
+  }
+</style>
+
 {#if error}
-  <p>Snap, you failed!</p>
-  <p>You achieved {letters} letters.</p>
+  <p>
+    Snap, you failed! You achieved {letters} {letters === 1 ? 'letter' : 'letters'}.
+  </p>
+  <p>This is what you got:</p>
+  <div class="lorem__original">
+    <p>{original.toLowerCase()}</p>
+    <p class="lorem__try">{text.toLowerCase()}</p>
+  </div>
   <button on:click={() => handleRetry()}>Retry</button>
+
 {:else}
   <textarea
     bind:value={text}
