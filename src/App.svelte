@@ -11,10 +11,9 @@
   const originalArray = original.toLowerCase().split("");
 
   function handleKeyUp() {
-    console.log("up");
     const updatedArray = [...originalArray];
     updatedArray.length = textArray.length;
-    console.log(textArray);
+
     if (JSON.stringify(textArray) !== JSON.stringify(updatedArray)) {
       error = true;
     }
