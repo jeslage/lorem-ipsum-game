@@ -14,6 +14,7 @@ body {
   margin: 120px auto;
   width: calc(100% - 80px);
   max-width: 1240px;
+  background: lightyellow;
 }
 
 a {
@@ -39,4 +40,5 @@ textarea {
   box-sizing: border-box;
   outline: none;
   border: none;
+  background: transparent;
 }
