@@ -42,6 +42,12 @@
 <style>
   .original {
     position: relative;
+    font-size: 60px;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .original p {
     margin: 0;
   }
 
@@ -51,11 +57,12 @@
     top: 0;
     left: 0;
     width: 100%;
-    color: crimson;
+    color: red;
   }
 
   textarea {
-    font-size: 80px;
+    font-size: 60px;
+    line-height: 1.2;
     width: 100%;
     resize: none;
   }
@@ -63,25 +70,34 @@
   button {
     background-color: transparent;
     outline: none;
-    font-weight: normal;
-    font-size: 30px;
+    font-weight: bold;
+    font-size: 34px;
     margin: 40px 0 0;
     padding: 10px 20px 13px;
-    text-transform: uppercase;
-    border: 3px solid black;
     cursor: pointer;
+    border: 4px dashed red;
+    color: red;
   }
 
   button:hover {
-    background: #000;
-    color: #fff;
+    border: 4px solid red;
+  }
+
+  span {
+    position: relative;
+    padding: 10px 15px;
+    border: 4px dashed red;
+    color: red;
+    font-weight: bold;
+    transform: rotate(2deg);
+    display: inline-block;
   }
 </style>
 
 {#if error}
   <p>
-    Snap, you failed! You achieved
-    <b>{letters} {letters === 1 ? 'letter' : 'letters'}.</b>
+    Snap, you failed!
+    <span>You achieved {letters} {letters === 1 ? 'letter' : 'letters'}.</span>
   </p>
   <div class="original">
     <p>{original.toLowerCase()}</p>
@@ -91,7 +107,7 @@
 {:else}
   <p>
     Try to type the
-    <b>Lorem ipsum</b>
+    <span>Lorem ipsum</span>
     text. Let´s see how far you can get:
   </p>
   <textarea
