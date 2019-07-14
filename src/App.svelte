@@ -54,10 +54,6 @@
     color: crimson;
   }
 
-  b {
-    text-decoration: underline;
-  }
-
   textarea {
     font-size: 80px;
     width: 100%;
@@ -93,9 +89,14 @@
   </div>
   <button on:click={() => handleRetry()}>Retry</button>
 {:else}
+  <p>
+    Try to type the
+    <b>Lorem ipsum</b>
+    text. Let´s see how far you can get:
+  </p>
   <textarea
     bind:value={text}
     bind:this={textareaElement}
-    placeholder="Lorem ipsum..."
+    placeholder="..."
     on:keyup={() => handleKeyUp()} />
 {/if}
