@@ -2,6 +2,7 @@
   import { onMount, afterUpdate } from "svelte";
 
   let error = false;
+  let pasteError = false;
 
   let text = "";
   let textareaElement;
@@ -32,7 +33,12 @@
     }
   }
 
+  function handlePaste() {
+    pasteError = true;
+  }
+
   function handleRetry() {
+    pasteError = false;
     error = false;
     text = "";
     window.scrollTo(0, 0);
@@ -40,7 +46,8 @@
 </script>
 
 <style>
-  .original {
+  .original,
+  textarea {
     position: relative;
     font-size: 40px;
     line-height: 1.2;
@@ -70,15 +77,13 @@
     margin: 0;
     top: 0;
     left: 0;
-    width: 100%;
+    width: calc(100% - 40px);
     padding: 10px 20px 13px;
     color: red;
   }
 
   textarea {
-    font-size: 60px;
-    line-height: 1.2;
-    width: 100%;
+    width: calc(100% - 40px);
     resize: none;
   }
 
@@ -122,15 +127,27 @@
   </div>
 
   <button on:click={() => handleRetry()}>Retry</button>
+{:else if pasteError}
+  <p>
+    Hey, that is not fair!
+    <span>Do not copy and paste!</span>
+  </p>
+  <button on:click={() => handleRetry()}>Retry</button>
 {:else}
   <p>
     Try to type the
     <span>Lorem ipsum</span>
     text. Let´s see how far you can get:
   </p>
+  <p class="flag">Your try</p>
   <textarea
     bind:value={text}
     bind:this={textareaElement}
     placeholder="..."
+    autocomplete="off"
+    autocorrect="off"
+    autocapitalize="off"
+    spellcheck="false"
+    on:paste={() => handlePaste()}
     on:keyup={() => handleKeyUp()} />
 {/if}
