@@ -40,7 +40,7 @@ main {
   line-height: 1.5;
   box-sizing: border-box;
   font-family: sans-serif;
-  margin: 120px auto;
+  margin: 70px auto;
   width: calc(100% - 80px);
   min-height: calc(100vh - 240px);
   max-width: 1240px;
