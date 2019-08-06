@@ -1,5 +1,7 @@
 # Lorem Ipsum Game
 
+Try to type as many letters of the 'lorem ipsum' text as you can!
+
 ## Tasks
 
 ```sh
