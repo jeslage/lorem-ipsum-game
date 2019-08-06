@@ -153,7 +153,7 @@
       <a
         target="_blank"
         rel="noopener noreferrer"
-        href={`http://twitter.com/share?text=I achieved ${letters} ${letters === 1 ? 'letter' : 'letters'} of the 'lorem ipsum' text. How many can you achieve?&url=http://loremipsumgame.netlify.com&hashtags=loremipsum,game`}>
+        href={`http://twitter.com/share?text=I typed ${letters} ${letters === 1 ? 'letter' : 'letters'} of the 'lorem ipsum' text. Can you get more?&url=http://loremipsumgame.netlify.com&hashtags=loremipsum,game`}>
         Twitter
       </a>
       or
@@ -174,9 +174,9 @@
   <button on:click={() => handleRetry()}>Retry</button>
 {:else}
   <p>
-    Try to type the
-    <span>Lorem ipsum</span>
-    text. Let´s see how far you can get:
+    Try to type as much letters of the
+    <span>lorem ipsum</span>
+    text as possible.
   </p>
   <p class="flag">Your try</p>
   <textarea

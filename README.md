@@ -1,6 +1,6 @@
 # Lorem Ipsum Game
 
-## Tasks 
+## Tasks
 
 ```sh
 # start dev server
