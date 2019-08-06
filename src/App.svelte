@@ -175,9 +175,9 @@
   <button on:click={() => handleRetry()}>Retry</button>
 {:else}
   <p>
-    Try to type as much letters of the
+    Try to type as many letters of the
     <span>lorem ipsum</span>
-    text as possible.
+    text as you can.
   </p>
   <p class="flag">Your try</p>
   <textarea
