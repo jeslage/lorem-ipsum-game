@@ -153,12 +153,12 @@
       <a
         target="_blank"
         rel="noopener noreferrer"
-        href={`http://twitter.com/share?text=I achieved ${letters} ${letters === 1 ? 'letter' : 'letters'} of the 'lorem ipsum' text. How many can you achieve?&url=http://lorem-ipsum-game.netlify.com&hashtags=loremipsum,game`}>
+        href={`http://twitter.com/share?text=I achieved ${letters} ${letters === 1 ? 'letter' : 'letters'} of the 'lorem ipsum' text. How many can you achieve?&url=http://loremipsumgame.netlify.com&hashtags=loremipsum,game`}>
         Twitter
       </a>
       or
       <a
-        href="https://www.facebook.com/sharer/sharer.php?u=http://lorem-ipsum-game.netlify.com"
+        href="https://www.facebook.com/sharer/sharer.php?u=http://loremipsumgame.netlify.com"
         target="_blank">
         Facebook
       </a>
