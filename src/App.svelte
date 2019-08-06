@@ -82,17 +82,12 @@
     color: red;
   }
 
-  textarea {
-    width: calc(100% - 40px);
-    resize: none;
-  }
-
   button {
     background-color: transparent;
     outline: none;
     font-weight: bold;
     font-size: 34px;
-    margin: 20px 0 0;
+    margin: 0;
     padding: 10px 20px 13px;
     cursor: pointer;
     border: 4px dashed red;
@@ -109,8 +104,35 @@
     border: 4px dashed red;
     color: red;
     font-weight: bold;
-    transform: rotate(2deg);
     display: inline-block;
+    transform: rotate(2deg);
+  }
+
+  .sharing {
+    display: flex;
+    align-items: center;
+  }
+
+  .sharing p {
+    flex-grow: 2;
+  }
+  .sharing button {
+    margin: 20px 0 20px 20px;
+  }
+
+  .credits {
+    color: red;
+    font-size: 10px;
+    letter-spacing: 0.02em;
+    text-align: right;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 2px 0;
+  }
+
+  .credits a {
+    text-decoration: underline;
+    border: none;
   }
 </style>
 
@@ -125,8 +147,25 @@
     <p>{original.toLowerCase()}</p>
     <p class="try">{text.toLowerCase()}</p>
   </div>
+  <div class="sharing">
+    <p>
+      Share on
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href={`http://twitter.com/share?text=I achieved ${letters} ${letters === 1 ? 'letter' : 'letters'} of the 'lorem ipsum' text. How many can you achieve?&url=http://lorem-ipsum-game.netlify.com&hashtags=loremipsum,game`}>
+        Twitter
+      </a>
+      or
+      <a
+        href="https://www.facebook.com/sharer/sharer.php?u=http://lorem-ipsum-game.netlify.com"
+        target="_blank">
+        Facebook
+      </a>
 
-  <button on:click={() => handleRetry()}>Retry</button>
+    </p>
+    <button on:click={() => handleRetry()}>Retry</button>
+  </div>
 {:else if pasteError}
   <p>
     Hey, that is not fair!
@@ -150,4 +189,13 @@
     spellcheck="false"
     on:paste={() => handlePaste()}
     on:keyup={() => handleKeyUp()} />
+  <p class="credits">
+    Made with ♥ by
+    <a
+      href="https://github.com/jeslage"
+      target="_blank"
+      rel="noopener noreferrer">
+      Johannes Eslage
+    </a>
+  </p>
 {/if}
