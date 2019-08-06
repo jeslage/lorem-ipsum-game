@@ -168,9 +168,10 @@
   </div>
 {:else if pasteError}
   <p>
-    Hey, that is not fair!
+    Gotcha, you cheater!
     <span>Do not copy and paste!</span>
   </p>
+
   <button on:click={() => handleRetry()}>Retry</button>
 {:else}
   <p>
