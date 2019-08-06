@@ -49,5 +49,6 @@ main {
   box-sizing: border-box;
   font-family: sans-serif;
   margin: 70px auto;
+  padding: 0 10px;
   max-width: 1240px;
 }
