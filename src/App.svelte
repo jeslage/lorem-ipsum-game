@@ -24,7 +24,7 @@
     }
   });
 
-  function handleKeyUp() {
+  function handleKeyDown() {
     const updatedArray = [...originalArray];
     updatedArray.length = textArray.length;
 
@@ -188,7 +188,7 @@
     autocapitalize="off"
     spellcheck="false"
     on:paste={() => handlePaste()}
-    on:keyup={() => handleKeyUp()} />
+    on:keydown={() => handleKeyDown()} />
   <p class="credits">
     Made with ♥ by
     <a
